@@ -5,8 +5,11 @@ import json
 import os
 from discord import embeds
 
-client = discord.Client()
-client = commands.Bot(command_prefix="!")
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
+client = commands.Bot(command_prefix = '!', intents=intents)
 
 @client.event
 async def on_ready():
@@ -34,15 +37,6 @@ async def info(ctx,message):
   result.set_image(url=image)
   await ctx.send(embed=result)
   
-
-  
-  
-
-
-
-
-
-
 
 
 
