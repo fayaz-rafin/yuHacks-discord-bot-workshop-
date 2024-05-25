@@ -40,4 +40,4 @@ async def info(ctx,message):
 
 
 
-client.run (os.environ['TOKEN'])
+client.run(os.getenv('TOKEN'))
